@@ -1,0 +1,145 @@
+:root {
+    --primary-colour: #6ABF16;
+    --secondary-colour: #32B8E9;
+    --button-colour: #1675bf;
+    --gutter: 1.5rem
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Resetting */
+
+/* Container */
+.container {
+    width: 90%; 
+    max-width: 1100px;
+    margin: auto; 
+}
+
+
+
+/* Banner & Form */
+#banner {
+    width: 100%;
+    height: 30rem;
+    background: url(img/Go-Cleaning-Commercial-Cleaning.jpg) no-repeat center center/cover;
+    /* border-radius: 0% 0% 90% 90%/0% 0% 50% 50%; */
+}
+
+#banner .banner-bg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 04rem;
+    /* background-color: rgba(73, 243, 51, 0.7); */
+    background-color: rgba(106, 191, 22, 0.65);
+    width: 100%;
+    height: 30rem;
+    /* border-radius: 0% 0% 90% 90%/0% 0% 50% 50%; */
+    
+}
+
+#banner .banner-bg h1 {
+    color: var(--secondary-colour);
+    font-size: 4rem;    
+}
+
+#banner .banner-bg h3 {
+    color: #fff;
+    font-size: 2.5rem;
+}
+#banner .banner-form {
+    /* background: rgb(255, 255, 255, 0.5); */
+    border-radius: 15px;
+    padding: 30px 10px 90px 10px;
+    width: 100%;
+    height: auto;
+}
+
+
+
+#banner .banner-form p {
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+#banner .banner-form form div:nth-child(1) div {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(5, minmax(50px, 1fr));
+
+}
+
+#banner form label:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+#banner form label input[type=radio] {
+    opacity: 0;
+}
+
+
+h1 {
+text-align: center;  
+}
+
+input {
+padding: 1rem;
+width: 100%;
+font-size: 17px;
+font-family: Raleway;
+border: 1px solid #aaaaaa;
+}
+
+[type=radio]:checked + img {
+    outline: 2px solid #f00;
+  }
+
+
+
+
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+display: none;
+}
+
+button {
+background-color: #4CAF50;
+color: #ffffff;
+border: none;
+padding: 10px 20px;
+font-size: 17px;
+font-family: Raleway;
+cursor: pointer;
+}
+
+button:hover {
+opacity: 0.8;
+}
+
+#prevBtn {
+background-color: #bbbbbb;
+}
+
+
+
+
+
+
+
+
+
+

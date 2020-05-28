@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Cleaning | Home </title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />   
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    
+    <!-- Banner -->
+    <div id="banner">
+        <div class="banner-bg">
+            <div class="container">
+                <div class="banner-form">
+                    <form id="regForm">
+                        <div class="tab">
+                            <h3>How Often Are You Looking To Clean Your House?</h3>
+                                <div>
+                                    <label for="one-time">One Time
+                                        <input type="radio" id="one-time" name="time" oninput="this.className = ''" value="one-time">
+                                        <img src="img/calendar.svg" alt="">
+                                    </label>
+                                    <label for="weekly">Weekly
+                                        <input type="radio"id="weekly" name="time" oninput="this.className = ''" value="weekly">
+                                        <img src="img/calendar.svg" alt="">
+                                    </label>
+                                    <label for="bi-weekly">Bi-Weekly
+                                        <input type="radio" id="bi-weekly" name="time" oninput="this.className = ''" value="bi-weekly">
+                                        <img src="img/calendar.svg" alt="">
+                                    </label>
+                                    <label for="monthly">Monthly
+                                        <input type="radio" id="monthly" name="time" oninput="this.className = ''" value="monthly">
+                                        <img src="img/calendar.svg" alt="">
+                                    </label>
+                                    <label for="other">Other
+                                        <input type="radio" id="other" name="time" oninput="this.className = ''" value="other">
+                                        <img src="img/calendar.svg" alt="">
+                                    </label>
+                                </div>
+                                </div>
+                        <div class="tab">
+                    
+                            <h3>Your Home Type</h3>
+                    
+                            <label for="home"></label>
+                            <select name="house-type" oninput="this.className = ''" id="cars">
+                            <option value=""></option>
+                            <option value="bungalow">bungalow</option>
+                            <option value="two-storey">two-storey</option>
+                            <option value="condo">condo</option>
+                            <option value="4-level-split">4-level-split</option>
+                            </select>
+                        </div>
+                        <div class="tab">
+                    
+                            <h3>Your Home Type2</h3>
+                    
+                            <label for="home"></label>
+                            <select name="house-type" oninput="this.className = ''" id="cars">
+                            <option value=""></option>
+                            <option value="bungalow">bungalow</option>
+                            <option value="two-storey">two-storey</option>
+                            <option value="condo">condo</option>
+                            <option value="4-level-split">4-level-split</option>
+                            </select>
+                        </div>
+                        <div style="overflow:auto;">
+                            <div style="float:right;">
+                                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="app.js"></script>
+    
+</body>
+</html>
