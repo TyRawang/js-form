@@ -26,19 +26,22 @@ function prev(){
 	if(currentTab>0){
 		for(var i=0;i<3;i++){		
 			if(i==currentTab-1){
-				$(".tab"+i).show();			
+				document.getElementsByClassName("tab"+i)[0].style.display = "block";
 			}else{
-				$(".tab"+i).hide();						
+				document.getElementsByClassName("tab"+i)[0].style.display = "none";
 			}
 		}
 		currentTab--;
 		if(currentTab==2){
-			$("#nextBtn").hide();
-			$("#submitBtn").show();
+			document.getElementById("nextBtn").style.display = "none";
+			document.getElementById("submitBtn").style.display = "";
 		}else{
-			$("#nextBtn").show();
-			$("#submitBtn").hide();
+			document.getElementById("nextBtn").style.display = "";
+			document.getElementById("submitBtn").style.display = "none";				
 		}		
+		if(currentTab==0){
+			document.getElementById("prevBtn").style.display = "none";			
+		}
 	}
 }
 
@@ -48,19 +51,22 @@ function next(){
 		if(validate()){
 			for(var i=0;i<3;i++){		
 				if(i==currentTab+1){
-					$(".tab"+i).show();			
+				document.getElementsByClassName("tab"+i)[0].style.display = "block";
 				}else{
-					$(".tab"+i).hide();						
+				document.getElementsByClassName("tab"+i)[0].style.display = "none";
 				}
 			}
 			currentTab++;
 			if(currentTab==2){
-				$("#nextBtn").hide();
-				$("#submitBtn").show();
+				document.getElementById("nextBtn").style.display = "none";
+				document.getElementById("submitBtn").style.display = "";
 			}else{
-				$("#nextBtn").show();
-				$("#submitBtn").hide();
+				document.getElementById("nextBtn").style.display = "";
+				document.getElementById("submitBtn").style.display = "none";				
 			}		
+			if(currentTab>0){
+					document.getElementById("prevBtn").style.display = "";
+			}
 		}
 	}
 }
@@ -87,32 +93,41 @@ function submitAction(){
 }
 
 function validateTab0(){
-	if($("input[name='time']:checked").val()==undefined){
-		$("#errorFrequency").show();
+	var ele = document.getElementsByName('time'); 
+	var isAnySelected = false;
+	for(i = 0; i < ele.length; i++) { 
+		if(ele[i].checked) 
+		{
+			isAnySelected = true;
+		}
+	} 
+	
+	if(!isAnySelected){
+		document.getElementById("errorFrequency").style.display = "block";				
 		return false;
 	}else{
-		$("#errorFrequency").hide();
+		document.getElementById("errorFrequency").style.display = "none";				
 		return true;		
 	}
 }
 
 
 function validateTab1(){
-	if($("#houseType").val()==''){
-		$("#errorHouseType1").show();
+	if(document.getElementById("houseType").value == ''){
+		document.getElementById("errorHouseType1").style.display = "block";		
 		return false;
 	}else{
-		$("#errorHouseType1").hide();
+		document.getElementById("errorHouseType1").style.display = "none";		
 		return true;		
 	}
 }
 
 function validateTab2(){
-	if($("#houseType2").val()==''){
-		$("#errorHouseType2").show();
+	if(document.getElementById("houseType2").value == ''){
+		document.getElementById("errorHouseType2").style.display = "block";		
 		return false;
 	}else{
-		$("#errorHouseType2").hide();
+		document.getElementById("errorHouseType2").style.display = "none";		
 		return true;		
 	}
 }
