@@ -8,7 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />   
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+			$(document).ready(function(){
+				$(".tab0").show();			
+				$(".tab1").hide();			
+				$(".tab2").hide();				
+			});	
+	</script>
 </head>
 <body>
     
@@ -18,7 +25,7 @@
             <div class="container">
                 <div class="banner-form">
                     <form id="regForm">
-                        <div class="tab">
+                        <div class="tab0">
                             <h3>How Often Are You Looking To Clean Your House?</h3>
                                 <div>
                                     <label for="one-time">One Time
@@ -42,37 +49,42 @@
                                         <img src="img/calendar.svg" alt="">
                                     </label>
                                 </div>
+								<font style="color:red;font-weight:bold;display:none" id="errorFrequency">This field is required</font>															
                                 </div>
-                        <div class="tab">
+                        <div class="tab1">
                     
                             <h3>Your Home Type</h3>
                     
                             <label for="home"></label>
-                            <select name="house-type" oninput="this.className = ''" id="cars">
+                            <select name="house-type" oninput="this.className = ''" id="houseType">
                             <option value=""></option>
                             <option value="bungalow">bungalow</option>
                             <option value="two-storey">two-storey</option>
                             <option value="condo">condo</option>
                             <option value="4-level-split">4-level-split</option>
-                            </select>
+                            </select><br/>
+							<font style="color:red;font-weight:bold;display:none" id="errorHouseType1">This field is required</font>							
                         </div>
-                        <div class="tab">
+                        <div class="tab2">
                     
                             <h3>Your Home Type2</h3>
                     
                             <label for="home"></label>
-                            <select name="house-type" oninput="this.className = ''" id="cars">
+                            <select name="house-type" oninput="this.className = ''" id="houseType2">
                             <option value=""></option>
                             <option value="bungalow">bungalow</option>
                             <option value="two-storey">two-storey</option>
                             <option value="condo">condo</option>
                             <option value="4-level-split">4-level-split</option>
                             </select>
+							<br/>
+							<font style="color:red;font-weight:bold;display:none" id="errorHouseType2">This field is required</font>														
                         </div>
                         <div style="overflow:auto;">
                             <div style="float:right;">
-                                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                <button type="button" id="prevBtn" onclick="prev()">Previous</button>
+                                <button type="button" id="nextBtn" onclick="next()">Next</button>
+                                <button type="button" id="submitBtn" style="display:none" onclick="submitAction()">Submit</button>								
                             </div>
                         </div>
                         
